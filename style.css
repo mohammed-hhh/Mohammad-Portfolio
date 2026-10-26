@@ -1,0 +1,493 @@
+/* ===================================
+   MOHAMMAD ADAWI - HOME PAGE
+   Pure HTML + CSS | No JavaScript
+   =================================== */
+
+/* Base colors */
+:root {
+  --nav: #101d2c;
+  --text: #ffffff;
+  --muted: #c7d1df;
+  --blue: #2679ff;
+  --line: #263b53;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background: #091320;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+/* Left sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--nav);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 23px 9px;
+  z-index: 10;
+  border-right: 1px solid var(--line);
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 65px;
+}
+
+.logo span {
+  color: #7facff;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 11px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 9px;
+  font-size: 12px;
+  border-radius: 24px;
+  color: var(--muted);
+  transition: 0.25s;
+}
+
+.menu a .icon {
+  width: 17px;
+  height: 17px;
+}
+
+.menu a:hover {
+  background: #294d8c;
+  color: white;
+}
+
+.theme-area {
+  margin-top: auto;
+}
+
+.theme-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.theme-button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: #20324c;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.theme-button .sun {
+  display: none;
+}
+
+/* Home background */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-left: 100px;
+  padding: clamp(110px, 17vh, 195px) 6% 70px;
+  background: #091320 url("images/workspace-bg.webp") center center / cover no-repeat;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--wash, transparent);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 625px;
+  position: relative;
+  z-index: 1;
+}
+
+.hello {
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0 0 13px;
+}
+
+h1 {
+  font-size: clamp(50px, 5.5vw, 100px);
+  letter-spacing: -3px;
+  line-height: 0.97;
+  margin: 0 0 19px;
+}
+
+h1 span {
+  display: block;
+  color: #6e9dff;
+}
+
+.role {
+  font-size: 15px;
+  letter-spacing: 2.6px;
+  margin: 0 0 20px;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 16px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.25s, background 0.25s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, #288cff, #2764ff);
+  box-shadow: 0 8px 30px #256cff40;
+}
+
+.btn-outline {
+  border: 1px solid #7191c9;
+  background: #0d172c88;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: #1b3455;
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 33px;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #526f9a;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+.socials a:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
+}
+
+.socials .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.signature {
+  position: absolute;
+  width: clamp(190px, 22vw, 355px);
+  top: 40%;
+  left: 49%;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px #ffffff55);
+}
+
+/* Small, CSS-only theme switch */
+body:has(#theme-toggle:checked) {
+  --nav: #f4f7fc;
+  --text: #10243c;
+  --muted: #354c66;
+  --line: #d5e1ed;
+}
+
+body:has(#theme-toggle:checked) .hero {
+  --wash: linear-gradient(90deg, #f7f9fcee 0%, #f7f9fce8 35%, #f7f9fc40 65%, transparent 85%);
+}
+
+body:has(#theme-toggle:checked) .theme-button {
+  background: #dce8f7;
+  color: #162b43;
+}
+
+body:has(#theme-toggle:checked) .theme-button .moon {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) .theme-button .sun {
+  display: block;
+}
+
+body:has(#theme-toggle:checked) .menu a:hover {
+  color: white;
+}
+
+/* Responsive layout */
+@media (max-width: 1050px) {
+  .hero {
+    padding-left: 5%;
+  }
+
+  h1 {
+    font-size: clamp(48px, 6.6vw, 75px);
+  }
+
+  .hero-content {
+    max-width: 500px;
+  }
+
+  .signature {
+    top: 48%;
+    left: 57%;
+    width: 250px;
+  }
+}
+
+@media (max-width: 720px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: 76px;
+    flex-direction: row;
+    padding: 12px 15px;
+    gap: 12px;
+  }
+
+  .logo {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .menu {
+    flex: 1;
+    width: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .menu a {
+    padding: 11px;
+    border-radius: 14px;
+  }
+
+  .menu a span {
+    display: none;
+  }
+
+  .theme-area {
+    margin: 0;
+  }
+
+  .hero {
+    margin-left: 0;
+    min-height: calc(100dvh - 76px);
+    padding: 65px 24px 225px;
+    background-position: 69% center;
+  }
+
+  .hero::before {
+    background: linear-gradient(90deg, #071222e8, #071222be 65%, #07122270);
+  }
+
+ 
+
+  h1 {
+    font-size: clamp(42px, 11vw, 65px);
+  }
+
+  .role {
+    font-size: 12px;
+    letter-spacing: 1.7px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .signature {
+    top: auto;
+    bottom: 25px;
+    left: auto;
+    right: 20px;
+    width: 190px;
+  }
+
+  body:has(#theme-toggle:checked) .hero::before {
+    background: linear-gradient(90deg, #f7f9fcee, #f7f9fccc 70%, #f7f9fc88);
+  }
+}
+
+@media (max-width: 390px) {
+  .sidebar {
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  .menu a {
+    padding: 8px;
+  }
+
+  .btn {
+    padding: 14px 17px;
+    gap: 10px;
+  }
+}
+
+/* Signature Writing Animation */
+
+.signature {
+    animation: writeSignature 1s ease-in-out 0.5s both;
+}
+
+@keyframes writeSignature {
+    from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+/* Smooth Entrance Animation */
+
+.hero-content > * {
+    animation: fadeUp 0.8s ease-out both;
+}
+
+/* Animation Timing */
+
+.hello {
+    animation-delay: 0.3s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.5s;
+}
+
+.role {
+    animation-delay: 0.7s;
+}
+
+.description {
+    animation-delay: 0.9s;
+}
+
+.actions {
+    animation-delay: 1.1s;
+}
+
+.socials {
+    animation-delay: 1.3s;
+}
+
+/* Movement */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Sidebar Space for All Sections */
+
+@media (min-width: 721px) {
+    main {
+        margin-left: 100px;
+    }
+
+    .hero {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    main {
+        margin-left: 0;
+    }
+}
+
+
+/* Keep Mobile Navbar Visible While Scrolling */
+
+@media (max-width: 720px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}

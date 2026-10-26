@@ -1,0 +1,380 @@
+
+/* ========== CONTACT SECTION ========== */
+
+.contact {
+    --contact-bg: #f3f7fd;
+    --contact-text: #12213a;
+    --contact-muted: #61718a;
+    --contact-field: #ffffff;
+
+    background: var(--contact-bg);
+    color: var(--contact-text);
+
+    padding: 110px 6%;
+    scroll-margin-top: 70px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ========== LEFT SIDE ========== */
+
+.contact-label {
+    color: #2679ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.contact-label::before {
+    content: "—";
+    margin-right: 10px;
+}
+
+.contact-info h2 {
+    font-size: clamp(32px, 4vw, 50px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.contact-info h2 span {
+    color: #2679ff;
+}
+
+.contact-description {
+    max-width: 450px;
+    color: var(--contact-muted);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Contact Links */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: var(--contact-text);
+    text-decoration: none;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: #2679ff;
+}
+
+/* Contact Icons */
+.contact-icon {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    background: #2679ff;
+    color: white;
+    border-radius: 50%;
+}
+
+.contact-icon .icon {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* ========== CONTACT FORM ========== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 30px;
+    border-radius: 20px;
+
+    background: var(--contact-field);
+    box-shadow: 0 15px 45px #17325712;
+}
+
+/* Form Labels */
+.contact-form label {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--contact-text);
+}
+
+/* Inputs and Message */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid #d9e4f2;
+    border-radius: 10px;
+    background: var(--contact-field);
+
+    color: var(--contact-text);
+    font: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 125px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2679ff;
+    box-shadow: 0 0 0 3px #2679ff20;
+}
+
+/* Send Button */
+.contact-button {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #2679ff, #4265ff);
+    color: white;
+
+    font: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px #2679ff30;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-button span {
+    margin-left: 10px;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px #2679ff55;
+}
+
+
+/* ========== FOOTER ========== */
+
+.portfolio-footer {
+    background: radial-gradient(
+        circle at 85% 20%,
+        #183451,
+        #0b1725 65%
+    );
+
+    color: #ffffff;
+    padding: 65px 6% 25px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Footer Columns */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+
+    padding-bottom: 50px;
+}
+
+/* Brand */
+.footer-brand h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 span {
+    color: #6b9fff;
+}
+
+.footer-brand h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    max-width: 240px;
+    color: #a9b9cd;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Footer Links */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #a9b9cd;
+    font-size: 14px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.footer-column a {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-column a:hover {
+    color: #6b9fff;
+    transform: translateX(4px);
+}
+
+/* Signature */
+.footer-signature {
+    text-align: center;
+}
+
+.footer-signature img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    max-height: 125px;
+
+    object-fit: contain;
+    margin: 0 auto 12px;
+}
+
+.footer-signature p {
+    color: #a9b9cd;
+    font-size: 13px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 22px;
+    border-top: 1px solid #ffffff20;
+}
+
+.footer-bottom p {
+    color: #91a4bd;
+    font-size: 12px;
+}
+
+/* Back to Top Button */
+.back-top {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    background: #213c5c;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+
+    transition: background 0.3s, transform 0.3s;
+}
+
+.back-top:hover {
+    background: #2679ff;
+    transform: translateY(-4px);
+}
+
+
+/* ========== DARK MODE ========== */
+
+body:not(:has(#theme-toggle:checked)) .contact {
+    --contact-bg: #101d2c;
+    --contact-text: #f4f7ff;
+    --contact-muted: #b9c8de;
+    --contact-field: #1b2e46;
+}
+
+body:not(:has(#theme-toggle:checked))
+.contact-form input,
+body:not(:has(#theme-toggle:checked))
+.contact-form textarea {
+    border-color: #3b506b;
+}
+
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 950px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .contact {
+        padding: 75px 6%;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-signature {
+        text-align: left;
+    }
+
+    .footer-signature img {
+        margin-left: 0;
+    }
+
+    .footer-bottom {
+        gap: 20px;
+    }
+}
